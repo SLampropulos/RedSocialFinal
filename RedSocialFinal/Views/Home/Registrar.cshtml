@@ -1,8 +1,7 @@
 ﻿@model RedSocialFinal.Models.Usuario
 
 @{
-    ViewData["Title"] = "Create";
-    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Registrar";
 }
 
 <h1>Create</h1>
@@ -11,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Registrar">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="dni" class="control-label"></label>
@@ -39,29 +38,14 @@
                 <span asp-validation-for="pass" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="intentosFallidos" class="control-label"></label>
-                <input asp-for="intentosFallidos" class="form-control" />
-                <span asp-validation-for="intentosFallidos" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="bloqueado"/> @Html.DisplayNameFor(model => model.bloqueado)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="esAdmin"/> @Html.DisplayNameFor(model => model.esAdmin)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Registrarse" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Login">Volver a Login</a>
 </div>
 
 @section Scripts {
