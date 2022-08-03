@@ -165,7 +165,7 @@ namespace RedSocialFinal.Controllers
             return View(postList.ToList());
         }
 
-        /* -----------------------------------------posts de propios--------------------------------------------------*/
+        /* -----------------------------------------posts  propios--------------------------------------------------*/
         public async Task<IActionResult> MisPublicaciones()
         {
             int? idUsuario = HttpContext.Session.GetInt32("Id");
@@ -173,6 +173,52 @@ namespace RedSocialFinal.Controllers
 
             return View(await postsUsuarioActual.ToListAsync());
 
+        }
+
+        /* -----------------------------------------ver comentarios de post especifico--------------------------------------------------*/
+        // GET: home/Comentarios/5
+        public async Task<IActionResult> Comentarios(int? id)
+        {
+            if (id == null || _context.posts == null)
+            {
+                return NotFound();
+            }
+
+            var myContext = _context.comentarios.Where(p => p.idPost == id);
+            return View(await myContext.ToListAsync());         
+        }
+
+        // GET: Comentarios/Create
+        public IActionResult Comentar(int id)
+        {
+            HttpContext.Session.SetInt32("Post", id);
+            //ViewData["idPost"] = new SelectList(_context.posts, "id", "id");
+            // ViewData["idUsuario"] = new SelectList(_context.usuarios, "id", "id");
+
+            return View();
+        }
+
+        // POST: Comentarios/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Comentar([Bind("contenido,fecha,idUsuario,idPost")] Comentario comentario)
+        {
+           
+            int? idUsuario = HttpContext.Session.GetInt32("Id");
+            int? idPost = HttpContext.Session.GetInt32("Post");
+            comentario.idUsuario = (int)idUsuario;
+            comentario.idPost = (int)idPost;
+            comentario.fecha = DateTime.Now;
+           
+            _context.Add(comentario);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("PostAmigos", "Home");
+
+            /* ViewData["idPost"] = new SelectList(_context.posts, "id", "id", comentario.idPost);
+             ViewData["idUsuario"] = new SelectList(_context.usuarios, "id", "id", comentario.idUsuario);
+             return View(comentario);*/
         }
         /* -----------------------------------------Editar perfil--------------------------------------------------*/
 

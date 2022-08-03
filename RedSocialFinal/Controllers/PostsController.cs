@@ -69,14 +69,13 @@ namespace RedSocialFinal.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,contenido,fecha,idUsuario")] Post post)
         {
-            if (ModelState.IsValid)
-            {
+            
                 _context.Add(post);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            ViewData["idUsuario"] = new SelectList(_context.usuarios, "id", "id", post.idUsuario);
-            return View(post);
+            
+            /*ViewData["idUsuario"] = new SelectList(_context.usuarios, "id", "id", post.idUsuario);
+            return View(post);*/
         }
 
         // GET: Posts/Edit/5

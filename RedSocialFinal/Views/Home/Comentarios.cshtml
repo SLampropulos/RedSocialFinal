@@ -1,14 +1,10 @@
-﻿@model IEnumerable<RedSocialFinal.Models.Post>
-
-
+﻿@model IEnumerable<RedSocialFinal.Models.Comentario>
 @{
-    ViewData["Title"] = "PostAmigos";
+    ViewData["Title"] = "Comentarios";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
-<h1>Posts de Amigos</h1>
+<h2>Comentarios</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -17,25 +13,23 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.usuario)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.contenido)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.fecha)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.reacciones)
+                @Html.DisplayNameFor(model => model.post)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.usuario)
+            </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.usuario.id)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.contenido)
             </td>
@@ -43,15 +37,15 @@
                 @Html.DisplayFor(modelItem => item.fecha)
             </td>
             <td>
-                @Html.FormatValue(item.reacciones.Count(),"")
+                @Html.DisplayFor(modelItem => item.post.id)
             </td>
             <td>
-                <a asp-action="Comentar" asp-route-id="@item.id">Comentar</a>
-                <a asp-action="Comentarios" asp-route-id="@item.id">Comentarios</a> 
+                @Html.DisplayFor(modelItem => item.usuario.id)
+            </td>
+            <td>  
+                <a asp-action="PostAmigos">Volver a publicaciones</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
-
-

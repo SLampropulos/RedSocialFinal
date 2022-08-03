@@ -68,13 +68,11 @@ namespace RedSocialFinal.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,palabra")] Tag tag)
         {
-            if (ModelState.IsValid)
-            {
+            
                 _context.Add(tag);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            return View(tag);
+           
         }
 
         // GET: Tags/Edit/5
