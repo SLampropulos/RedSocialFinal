@@ -8,185 +8,189 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RedSocialFinal
 build_property.RootNamespace = RedSocialFinal
-build_property.ProjectDir = C:\Users\Lean\source\repos\RedSocialFinal\RedSocialFinal\
+build_property.ProjectDir = C:\Users\froma\Source\Repos\RedSocialFinal\RedSocialFinal\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Lean\source\repos\RedSocialFinal\RedSocialFinal
+build_property.MSBuildProjectDirectory = C:\Users\froma\Source\Repos\RedSocialFinal\RedSocialFinal
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Comentarios/Create.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Comentarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Comentarios/Delete.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Comentarios/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Comentarios/Details.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Comentarios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Comentarios/Edit.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Comentarios/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Comentarios/Index.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Comentarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Home/Index.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Home/Login.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Home/Privacy.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Posts/Create.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Posts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Posts/Delete.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Posts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Posts/Details.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Posts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Posts/Edit.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Posts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Posts/Index.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Posts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Reaccions/Create.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Reaccions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhY2Npb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Reaccions/Delete.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Reaccions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhY2Npb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Reaccions/Details.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Reaccions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhY2Npb25zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Reaccions/Edit.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Reaccions/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhY2Npb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Reaccions/Index.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Reaccions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhY2Npb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Shared/Error.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Shared/_LayoutAdmin.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Shared/_LayoutLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/TagPosts/Create.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/TagPosts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnUG9zdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/TagPosts/Delete.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/TagPosts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnUG9zdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/TagPosts/Details.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/TagPosts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnUG9zdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/TagPosts/Edit.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/TagPosts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnUG9zdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/TagPosts/Index.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/TagPosts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnUG9zdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Tags/Create.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Tags/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Tags/Delete.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Tags/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Tags/Details.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Tags/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Tags/Edit.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Tags/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Tags/Index.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Tags/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/UsuarioAmigoes/Create.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/UsuarioAmigoes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb0FtaWdvZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/UsuarioAmigoes/Delete.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/UsuarioAmigoes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb0FtaWdvZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/UsuarioAmigoes/Details.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/UsuarioAmigoes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb0FtaWdvZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/UsuarioAmigoes/Edit.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/UsuarioAmigoes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb0FtaWdvZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/UsuarioAmigoes/Index.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/UsuarioAmigoes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb0FtaWdvZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Usuarios/Create.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Usuarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Usuarios/Delete.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Usuarios/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Usuarios/Details.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Usuarios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Usuarios/Edit.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Usuarios/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Usuarios/Index.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Usuarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/_ViewImports.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/_ViewStart.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lean/source/repos/RedSocialFinal/RedSocialFinal/Views/Shared/_Layout.cshtml]
+[C:/Users/froma/Source/Repos/RedSocialFinal/RedSocialFinal/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-u0sl3smvxh

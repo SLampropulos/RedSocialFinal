@@ -22,7 +22,7 @@ namespace RedSocialFinal.Controllers
         // GET: Posts
         public async Task<IActionResult> Index()
         {
-            var myContext = _context.posts.Include(p => p.usuario);
+            var myContext = _context.posts.Include(p => p.usuario).Include(p => p.reacciones);
             return View(await myContext.ToListAsync());
         }
 
