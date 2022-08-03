@@ -39,6 +39,14 @@ namespace RedSocialFinal.Controllers
             return View();
         }
 
+        public IActionResult Registrar()
+        {
+            return View();
+        }
+
+
+        /* -----------------------------------------Login--------------------------------------------------*/
+
         // POST: Home/Login
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -72,7 +80,7 @@ namespace RedSocialFinal.Controllers
             }
             else if(usuario.esAdmin == false && usuario.bloqueado != true)
             {
-                return RedirectToAction("Index", "posts");
+                return RedirectToAction("PostAmigos", "Home");
 
             }
          
@@ -90,6 +98,26 @@ namespace RedSocialFinal.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        /* -----------------------------------------registro--------------------------------------------------*/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Registrar([Bind("id,dni,nombre,apellido,mail,pass,0,0,0")] Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(usuario);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Login));
+            }
+            return RedirectToAction("Registrar", "Home");
+        }
+        /* -----------------------------------------posts de mis amigos--------------------------------------------------*/
+
+        public async Task<IActionResult> PostAmigos()
+        {
+            var myContext = _context.posts.Include(p => p.usuario);
+            return View(await myContext.ToListAsync());
         }
     }
 }
