@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RedSocialFinal.Data;
 using RedSocialFinal.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace RedSocialFinal.Controllers
 {
@@ -22,6 +23,16 @@ namespace RedSocialFinal.Controllers
         public HomeController(MyContext context)
         {
             _context = context;
+            _context.usuarios.Include(u => u.misPost).Include(u => u.misComentarios).Include(u => u.misReacciones).Include(u => u.misAmigos)
+                  .Include(u => u.amigosMios).Load();
+
+            _context.posts.Include(u => u.usuario).Include(u => u.comentarios).Include(u => u.reacciones).Include(u => u.Tags).Load();
+
+            _context.comentarios.Include(u => u.usuario).Include(u => u.post).Load();
+
+            _context.reacciones.Include(u => u.post).Include(u => u.usuario).Load();
+
+            _context.Tags.Include(u => u.Posts).Load();
         }
 
         public IActionResult Index()
@@ -75,13 +86,14 @@ namespace RedSocialFinal.Controllers
                 usuario.intentosFallidos = 0;
                 _context.usuarios.Update(usuario);
                 await _context.SaveChangesAsync();
+                HttpContext.Session.SetInt32("Id",usuario.id);
                 return RedirectToAction("Index", "Usuarios");
 
             }
             else if(usuario.esAdmin == false && usuario.bloqueado != true)
             {
+                HttpContext.Session.SetInt32("Id", usuario.id);
                 return RedirectToAction("PostAmigos", "Home");
-
             }
          
             
@@ -116,8 +128,19 @@ namespace RedSocialFinal.Controllers
 
         public async Task<IActionResult> PostAmigos()
         {
-            var myContext = _context.posts.Include(p => p.usuario);
-            return View(await myContext.ToListAsync());
+            int? idUsuario = HttpContext.Session.GetInt32("Id");
+            var usuarioActual = _context.usuarios.Where(p => p.id == idUsuario).FirstOrDefault();
+
+            List<Post> postList = new List<Post>();
+            foreach (UsuarioAmigo amigo in usuarioActual.misAmigos)
+            {
+                foreach (Post post in amigo.amigo.misPost)
+                {
+                    postList.Add(post);
+                }
+            }
+
+            return View(postList.ToList());
         }
     }
 }

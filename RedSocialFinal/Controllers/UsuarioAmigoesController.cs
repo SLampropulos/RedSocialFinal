@@ -17,6 +17,16 @@ namespace RedSocialFinal.Controllers
         public UsuarioAmigoesController(MyContext context)
         {
             _context = context;
+            _context.usuarios.Include(u => u.misPost).Include(u => u.misComentarios).Include(u => u.misReacciones).Include(u => u.misAmigos)
+                  .Include(u => u.amigosMios).Load();
+
+            _context.posts.Include(u => u.usuario).Include(u => u.comentarios).Include(u => u.reacciones).Include(u => u.Tags).Load();
+
+            _context.comentarios.Include(u => u.usuario).Include(u => u.post).Load();
+
+            _context.reacciones.Include(u => u.post).Include(u => u.usuario).Load();
+
+            _context.Tags.Include(u => u.Posts).Load();
         }
 
         // GET: UsuarioAmigoes
