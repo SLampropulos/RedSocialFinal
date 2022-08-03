@@ -111,30 +111,31 @@ namespace RedSocialFinal.Controllers
             {
                 return NotFound();
             }
+            Reaccion reaccionActual = _context.reacciones.Where(p => p.id == id).FirstOrDefault();
 
-            if (ModelState.IsValid)
+            reaccionActual.id = reaccion.id;
+            reaccionActual.tipo = reaccion.tipo;
+            reaccionActual.idUsuario = reaccion.idUsuario;
+            reaccionActual.idPost = reaccion.idPost;
+
+            try
             {
-                try
-                {
-                    _context.Update(reaccion);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ReaccionExists(reaccion.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(reaccionActual);
+                await _context.SaveChangesAsync();
             }
-            ViewData["idPost"] = new SelectList(_context.posts, "id", "id", reaccion.idPost);
-            ViewData["idUsuario"] = new SelectList(_context.usuarios, "id", "id", reaccion.idUsuario);
-            return View(reaccion);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ReaccionExists(reaccion.id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return RedirectToAction(nameof(Index));
+          
         }
 
         // GET: Reaccions/Delete/5

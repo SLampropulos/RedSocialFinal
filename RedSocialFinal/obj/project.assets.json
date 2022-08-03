@@ -9993,11 +9993,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lean\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
+      "projectUniqueName": "C:\\Users\\Lean\\source\\repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
       "projectName": "RedSocialFinal",
-      "projectPath": "C:\\Users\\Lean\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
+      "projectPath": "C:\\Users\\Lean\\source\\repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
       "packagesPath": "C:\\Users\\Lean\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lean\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\obj\\",
+      "outputPath": "C:\\Users\\Lean\\source\\repos\\RedSocialFinal\\RedSocialFinal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lean\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10074,13 +10074,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\Lean\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

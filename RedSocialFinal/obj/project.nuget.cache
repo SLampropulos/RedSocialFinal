@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZOTeNEpHQ02NClze4YpbXq5st3oPcl2IKYS3se4ykTpZ6oI6/Vjih7pdWCBWd4LsiiYUmZOZQ2G8UDO1cNiNEQ==",
+  "dgSpecHash": "ukezyKID/6260I0oD2JfoCWCu93nUtJIZ/tKHlG97bAErreUBCn1p+Afo2GQQT/J02hotV45pjcOi0Dkd/uedw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lean\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
+  "projectFilePath": "C:\\Users\\Lean\\source\\repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lean\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Lean\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
@@ -194,12 +194,5 @@
     "C:\\Users\\Lean\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Lean\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\Lean\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

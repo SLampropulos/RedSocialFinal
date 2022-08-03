@@ -105,27 +105,28 @@ namespace RedSocialFinal.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            Tag tagActual = _context.Tags.Where(p => p.id == id).FirstOrDefault();
+
+            tagActual.id = tag.id;
+            tagActual.palabra = tag.palabra;
+            
+            try
             {
-                try
-                {
-                    _context.Update(tag);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TagExists(tag.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(tagActual);
+                await _context.SaveChangesAsync();
             }
-            return View(tag);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!TagExists(tag.id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return RedirectToAction(nameof(Index));  
         }
 
         // GET: Tags/Delete/5

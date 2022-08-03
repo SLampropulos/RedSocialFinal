@@ -102,29 +102,32 @@ namespace RedSocialFinal.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            Comentario comentarioActual = _context.comentarios.Where(p => p.id == id).FirstOrDefault();
+            
+            comentarioActual.id = comentario.id;
+            comentarioActual.contenido = comentario.contenido;
+            comentarioActual.fecha = comentario.fecha;
+            comentarioActual.idUsuario = comentario.idUsuario;
+            comentarioActual.idPost = comentario.idPost;
+
+            try
             {
-                try
-                {
-                    _context.Update(comentario);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ComentarioExists(comentario.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(comentarioActual);
+                await _context.SaveChangesAsync();
             }
-            ViewData["idPost"] = new SelectList(_context.posts, "id", "id", comentario.idPost);
-            ViewData["idUsuario"] = new SelectList(_context.usuarios, "id", "id", comentario.idUsuario);
-            return View(comentario);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ComentarioExists(comentario.id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return RedirectToAction(nameof(Index));
+       
         }
 
         // GET: Comentarios/Delete/5

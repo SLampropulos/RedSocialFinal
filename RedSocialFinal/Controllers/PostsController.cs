@@ -108,28 +108,31 @@ namespace RedSocialFinal.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            Post postActual = _context.posts.Where(p => p.id == id).FirstOrDefault();
+           
+            postActual.id = post.id;
+            postActual.contenido = post.contenido;
+            postActual.fecha = post.fecha;
+            postActual.idUsuario = post.idUsuario;
+
+            try
             {
-                try
-                {
-                    _context.Update(post);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PostExists(post.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+               _context.Update(postActual);
+               await _context.SaveChangesAsync();
             }
-            ViewData["idUsuario"] = new SelectList(_context.usuarios, "id", "id", post.idUsuario);
-            return View(post);
+            catch (DbUpdateConcurrencyException)
+            {
+               if (!PostExists(post.id))
+               {
+                  return NotFound();
+               }
+               else
+               {
+                  throw;
+               }
+            }
+            return RedirectToAction(nameof(Index));
+          
         }
 
         // GET: Posts/Delete/5
