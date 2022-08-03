@@ -55,6 +55,25 @@ namespace RedSocialFinal.Controllers
             return View();
         }
 
+        public IActionResult MiPerfil()
+        {
+            int? idUsuario = HttpContext.Session.GetInt32("Id");
+            var usuarioActual = _context.usuarios.Where(p => p.id == idUsuario).FirstOrDefault();
+
+            if (idUsuario == null || _context.usuarios == null)
+            {
+                return NotFound();
+            }
+
+            if (usuarioActual == null)
+            {
+                return NotFound();
+            }
+
+            return View(usuarioActual);
+            
+        }
+
 
         /* -----------------------------------------Login--------------------------------------------------*/
 
@@ -90,8 +109,11 @@ namespace RedSocialFinal.Controllers
                 return RedirectToAction("Index", "Usuarios");
 
             }
-            else if(usuario.esAdmin == false && usuario.bloqueado != true)
+            else if(usuario.nombre.Equals(nombre) && usuario.pass.Equals(pass) && usuario.bloqueado != true && usuario.esAdmin == false && usuario.bloqueado != true)
             {
+                usuario.intentosFallidos = 0;
+                _context.usuarios.Update(usuario);
+                await _context.SaveChangesAsync();
                 HttpContext.Session.SetInt32("Id", usuario.id);
                 return RedirectToAction("PostAmigos", "Home");
             }
@@ -141,6 +163,75 @@ namespace RedSocialFinal.Controllers
             }
 
             return View(postList.ToList());
+        }
+        /* -----------------------------------------Editar perfil--------------------------------------------------*/
+
+        public async Task<IActionResult> EditarPerfil(int? id)
+        {
+            if (id == null || _context.usuarios == null)
+            {
+                return NotFound();
+            }
+
+            var usuario = await _context.usuarios.FindAsync(id);
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+            return View(usuario);
+        }
+
+        // POST: Usuarios/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditarPerfil(int id, [Bind("id,dni,nombre,apellido,mail,pass,0,0,0")] Usuario usuario, string nuevaContraseña, string confirmacionContraseña)
+        {
+            if (id != usuario.id)
+            {
+                return NotFound();
+            }
+            int? idUsuario = HttpContext.Session.GetInt32("Id");
+            Usuario usuarioActual = _context.usuarios.Where(p => p.id == idUsuario).FirstOrDefault();
+            
+            usuarioActual.nombre = usuario.nombre;
+            usuarioActual.apellido = usuario.apellido;
+            usuarioActual.dni = usuario.dni;
+            usuarioActual.mail = usuario.mail;
+            usuarioActual.pass = nuevaContraseña;
+            usuarioActual.esAdmin = usuario.esAdmin;
+            usuarioActual.bloqueado = usuario.bloqueado;
+            usuarioActual.intentosFallidos = usuario.intentosFallidos;
+            if (!usuario.pass.Equals(usuario.pass) || (!nuevaContraseña.Equals(confirmacionContraseña)))
+            {
+                return RedirectToAction("MiPerfil", "Home");
+            }
+            else if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(usuarioActual);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!UsuarioExists(usuario.id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+            }
+            return RedirectToAction("MiPerfil", "Home");
+
+            bool UsuarioExists(int id)
+            {
+                return (_context.usuarios?.Any(e => e.id == id)).GetValueOrDefault();
+            }
         }
     }
 }
