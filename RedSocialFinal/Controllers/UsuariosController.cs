@@ -104,32 +104,30 @@ namespace RedSocialFinal.Controllers
             {
                 return NotFound();
             }
+            Usuario usuarioActual = _context.usuarios.Where(p => p.id == id).FirstOrDefault();
 
-            if (ModelState.IsValid)
+            usuarioActual.nombre = usuario.nombre;
+            usuarioActual.apellido = usuario.apellido;
+            usuarioActual.dni = usuario.dni;
+            usuarioActual.mail = usuario.mail;
+            usuarioActual.esAdmin = usuario.esAdmin;
+            usuarioActual.bloqueado = usuario.bloqueado;
+            usuarioActual.intentosFallidos = usuario.intentosFallidos;
+            try
             {
-                try
-                {
-                    _context.Update(usuario);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UsuarioExists(usuario.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                 _context.Update(usuarioActual);
+                 await _context.SaveChangesAsync();
             }
-            return View(usuario);
+            catch (Exception e)
+            {
+                    
+            }
+            
+            return RedirectToAction("Index", "Usuarios");
         }
 
-        // GET: Usuarios/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+            // GET: Usuarios/Delete/5
+            public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.usuarios == null)
             {
