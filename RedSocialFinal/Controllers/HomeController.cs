@@ -164,6 +164,16 @@ namespace RedSocialFinal.Controllers
 
             return View(postList.ToList());
         }
+
+        /* -----------------------------------------posts de propios--------------------------------------------------*/
+        public async Task<IActionResult> MisPublicaciones()
+        {
+            int? idUsuario = HttpContext.Session.GetInt32("Id");
+            var postsUsuarioActual = _context.posts.Where(p => p.idUsuario == idUsuario);
+
+            return View(await postsUsuarioActual.ToListAsync());
+
+        }
         /* -----------------------------------------Editar perfil--------------------------------------------------*/
 
         public async Task<IActionResult> EditarPerfil(int? id)
