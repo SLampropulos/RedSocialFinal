@@ -251,6 +251,7 @@ namespace RedSocialFinal.Data
             modelBuilder.Entity<UsuarioAmigo>().HasData(
                new { num_usr = 1, num_usr2 = 2 },
                new { num_usr = 1, num_usr2 = 3 },
+               new { num_usr = 2, num_usr2 = 1 },
                new { num_usr = 2, num_usr2 = 4 },
                new { num_usr = 4, num_usr2 = 2 },
                new { num_usr = 4, num_usr2 = 3 },
