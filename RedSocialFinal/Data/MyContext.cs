@@ -261,8 +261,7 @@ namespace RedSocialFinal.Data
 
           
 
-            //Ignoro, no agrego UsuarioManager a la base de datos
-            modelBuilder.Ignore<RedSocial>();
+           
         }
         public DbSet<RedSocialFinal.Models.UsuarioAmigo>? UsuarioAmigo { get; set; }
         public DbSet<RedSocialFinal.Models.TagPost>? TagPost { get; set; }

@@ -9988,27 +9988,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\froma\\.nuget\\packages\\": {}
+    "C:\\Users\\Lean\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\froma\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
+      "projectUniqueName": "C:\\Users\\Lean\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
       "projectName": "RedSocialFinal",
-      "projectPath": "C:\\Users\\froma\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
-      "packagesPath": "C:\\Users\\froma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\froma\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\Lean\\source\\repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
-      "projectName": "RedSocialFinal",
-      "projectPath": "C:\\Users\\Lean\\source\\repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
+      "projectPath": "C:\\Users\\Lean\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
       "packagesPath": "C:\\Users\\Lean\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lean\\source\\repos\\RedSocialFinal\\RedSocialFinal\\obj\\",
->>>>>>> 85b33178b4bfcef8c6be858b8462f0701c448b69
+      "outputPath": "C:\\Users\\Lean\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\froma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lean\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10082,5 +10074,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\Lean\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
