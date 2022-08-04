@@ -472,6 +472,37 @@ namespace RedSocialFinal.Controllers
             return RedirectToAction("PostAmigos", "Home");
 
         }
+        /* -----------------------------------------Agregar Tag--------------------------------------------------*/
+        // GET: Tags/Create
+        public IActionResult AgregarTag(int? id)
+        {
+            HttpContext.Session.SetInt32("IdPost", (int)id);
+            return View();
+        }
+
+        // POST: Tags/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AgregarTag([Bind("palabra")] Tag tag)
+        {
+            int? idPost = HttpContext.Session.GetInt32("IdPost");
+            Post post = null;
+            post = _context.posts.Where(U => U.id == idPost).FirstOrDefault();
+
+            if (_context.Tags.Where(u => u.palabra.Equals(tag.palabra)).FirstOrDefault() == null)
+            {
+                _context.Add(tag);
+                post.Tags.Add(tag);
+                _context.Update(post);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("MisPublicaciones", "Home");
+
+        }
+
         private bool UsuarioExists(int id)
         {
             return (_context.usuarios?.Any(e => e.id == id)).GetValueOrDefault();
