@@ -513,11 +513,27 @@ namespace RedSocialFinal.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> BuscarPosts(string? contenido, DateTime? fechaDesde, DateTime? fechaHasta, string? tag)
+        public async Task<IActionResult> BuscarPosts(string? contenido, DateTime? fechaDesde, DateTime? fechaHasta, string? tag, bool orderFecha, bool nombreAsc, bool nombreDesc)
         {
 
             if (contenido == null && (fechaDesde == null || fechaHasta==null) && tag == null)
             {
+                if (orderFecha && nombreAsc && nombreDesc)
+                {
+                    return View(await _context.posts.ToListAsync());
+                }
+                else if (orderFecha)
+                {
+                    return View(await _context.posts.OrderBy(u => u.fecha).ToListAsync());
+                }
+                else if (nombreAsc)
+                {
+                    return View(await _context.posts.OrderBy(u => u.usuario.nombre).ToListAsync());
+                }
+                else if (nombreDesc)
+                {
+                    return View(await _context.posts.OrderByDescending(u => u.usuario.nombre).ToListAsync());
+                }
                 return View(await _context.posts.ToListAsync());
             }
 
@@ -546,8 +562,21 @@ namespace RedSocialFinal.Controllers
                     
                 }
             }
-            
-            return View(bPost.ToList());
+            if (orderFecha && nombreAsc && nombreDesc) 
+            {
+                return View(bPost.ToList());
+            }else if (orderFecha) 
+            {
+                return View(bPost.OrderBy(u => u.fecha).ToList());
+            }else if (nombreAsc)
+            {
+                return View(bPost.OrderBy(u => u.usuario.nombre).ToList());
+            }else if (nombreDesc)
+            {
+                return View(bPost.OrderByDescending(u => u.usuario.nombre).ToList());
+            }
+
+                return View(bPost.ToList());
         }
 
 
