@@ -28,13 +28,16 @@
             <th>
                 @Html.DisplayNameFor(model => model.reacciones)
             </th>
+            <th>
+               <span>Tags</span>
+            </th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.usuario.id)
+                @Html.DisplayFor(modelItem => item.usuario.nombre)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.contenido)
@@ -44,6 +47,12 @@
             </td>
             <td>
                 @Html.FormatValue(item.reacciones.Count(),"")
+            </td>
+            <td>
+                @foreach (var i in item.Tags)
+                {
+                <span>#@Html.DisplayFor(modelItem => i.palabra) </span>
+                }
             </td>
             <td class="d-flex">
                 <a asp-action="Comentar" asp-route-id="@item.id">Comentar</a> |

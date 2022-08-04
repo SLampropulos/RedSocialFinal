@@ -515,9 +515,13 @@ namespace RedSocialFinal.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> BuscarPosts(string? contenido, DateTime? fechaDesde, DateTime? fechaHasta, string? tag)
         {
-            
 
-            List<Post> bPost = new List<Post>();
+            if (contenido == null && (fechaDesde == null || fechaHasta==null) && tag == null)
+            {
+                return View(await _context.posts.ToListAsync());
+            }
+
+                List<Post> bPost = new List<Post>();
 
             var query = from Post in _context.posts
                         where Post.contenido == contenido ||
