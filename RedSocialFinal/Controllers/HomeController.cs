@@ -503,6 +503,52 @@ namespace RedSocialFinal.Controllers
 
         }
 
+
+        /* -----------------------------------------Buscar Post--------------------------------------------------*/
+        public async Task<IActionResult> BuscarPosts(List<Post>? post)
+        {
+            
+            return View(post);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> BuscarPosts(string? contenido, DateTime? fechaDesde, DateTime? fechaHasta, string? tag)
+        {
+            
+
+            List<Post> bPost = new List<Post>();
+
+            var query = from Post in _context.posts
+                        where Post.contenido == contenido ||
+                        (Post.fecha >= fechaDesde &&
+                        Post.fecha <= fechaHasta)
+                        select Post;
+            bPost = await query.ToListAsync();
+
+            if (tag != null)
+            {
+                foreach (Post p in _context.posts)
+                {
+                    if (p.Tags.Where(u => u.palabra.Equals(tag)).FirstOrDefault() != null)
+                    {
+                        if (!bPost.Contains(p))
+                        {
+                            bPost.Add(p);
+                            break;
+                        }
+                      
+                    }
+                    
+                }
+            }
+            
+            return View(bPost.ToList());
+        }
+
+
+
+        /* -----------------------------------------Metodos auxiliares--------------------------------------------------*/
         private bool UsuarioExists(int id)
         {
             return (_context.usuarios?.Any(e => e.id == id)).GetValueOrDefault();

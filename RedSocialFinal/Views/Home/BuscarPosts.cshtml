@@ -1,0 +1,97 @@
+﻿@model IEnumerable<RedSocialFinal.Models.Post>
+
+@{
+    ViewData["Title"] = "BuscarPosts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>BuscarPosts</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="BuscarPosts">
+            <div class="form-group">
+                <label class="control-label">Contenido</label>
+                <input name="contenido" class="form-control" />
+                <span  class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Fecha desde</label>
+                <input  name="fechaDesde" class="form-control calendar" type="datetime-local"/>
+                <span   class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Fecha hasta</label>
+                <input  name="fechaHasta" class="form-control" type="datetime-local"/>
+                <span   class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Tag</label>
+                <input  name="tag" class="form-control" />
+                <span   class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Buscar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contenido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.reacciones)
+            </th>
+            <th>
+               <span>Tags</span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.usuario.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contenido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.FormatValue(item.reacciones.Count(),"")
+            </td>
+            <td>
+                @foreach (var i in item.Tags)
+                {
+                <span>#@Html.DisplayFor(modelItem => i.palabra) </span>
+                }
+            </td>
+            <td class="d-flex">
+                <a asp-action="Comentar" asp-route-id="@item.id">Comentar</a> |
+                <a asp-action="Comentarios" asp-route-id="@item.id">Comentarios</a> |
+                <form asp-action="Reaccionar" >
+                    <input type="hidden" name="idPost" asp-for="@item.id"/>
+                    <input type="submit" value="Me gusta" class="btn btn-primary" />
+                </form> |
+                <form asp-action="EliminarReaccion" >
+                    <input type="hidden" name="idPost" asp-for="@item.id"/>
+                    <input type="submit" value="Ya no me gusta" class="btn btn-primary" />
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
