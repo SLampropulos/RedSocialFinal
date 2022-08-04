@@ -9,7 +9,7 @@
 <h1>Mis Publicaciones</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Postear">Crear Post</a>
 </p>
 <table class="table">
     <thead>
@@ -44,9 +44,11 @@
                 @Html.FormatValue(item.reacciones.Count(),"")
             </td>
             <td>
-                <a asp-action="Comentar" asp-route-id="@item.id">Comentar</a>
+                <a asp-action="Comentar" asp-route-id="@item.id">Comentar</a> |
                 <a asp-action="Comentarios" asp-route-id="@item.id">Comentarios</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Eliminar</a>
+                <a asp-action="ModificarPost" asp-route-id="@item.id">Modificar</a> |
+                <a asp-action="EliminarPost" asp-route-id="@item.id">Eliminar</a>
+                
             </td>
         </tr>
 }

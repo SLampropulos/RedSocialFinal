@@ -175,6 +175,130 @@ namespace RedSocialFinal.Controllers
 
         }
 
+        /* -----------------------------------------Postear--------------------------------------------------*/
+
+        public IActionResult Postear(int id)
+        {
+            
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Postear([Bind("contenido,fecha,idUsuario")] Post post)
+        {
+            int? usuarioActual = HttpContext.Session.GetInt32("Id");
+            post.idUsuario = (int)usuarioActual;
+            post.fecha = DateTime.Now;
+            _context.Add(post);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("MisPublicaciones", "Home");
+
+            /*ViewData["idUsuario"] = new SelectList(_context.usuarios, "id", "id", post.idUsuario);
+            return View(post);*/
+        }
+
+        /* -----------------------------------------Eliminar Post--------------------------------------------------*/
+        // GET: Posts/Delete/5
+        public async Task<IActionResult> EliminarPost(int? id)
+        {
+            if (id == null || _context.posts == null)
+            {
+                return NotFound();
+            }
+
+            var post = await _context.posts
+                .Include(p => p.usuario)
+                .FirstOrDefaultAsync(m => m.id == id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            return View(post);
+        }
+
+       
+
+        // POST: Posts/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EliminarPost(int id)
+        {
+            if (_context.posts == null)
+            {
+                return Problem("Entity set 'MyContext.posts'  is null.");
+            }
+            var post = await _context.posts.FindAsync(id);
+            if (post != null)
+            {
+                _context.posts.Remove(post);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction("MisPublicaciones", "Home");
+        }
+
+        /* -----------------------------------------Modificar Post--------------------------------------------------*/
+
+        // GET: Posts/Edit/5
+        public async Task<IActionResult> ModificarPost(int? id)
+        {
+            if (id == null || _context.posts == null)
+            {
+                return NotFound();
+            }
+
+            var post = await _context.posts.FindAsync(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+            ViewData["idUsuario"] = new SelectList(_context.usuarios, "id", "id", post.idUsuario);
+            return View(post);
+        }
+
+        // POST: Posts/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ModificarPost(int id, [Bind("id,contenido,fecha,idUsuario")] Post post)
+        {
+            if (id != post.id)
+            {
+                return NotFound();
+            }
+
+            int? usuarioActual = HttpContext.Session.GetInt32("Id");
+
+            Post postActual = _context.posts.Where(p => p.id == id).FirstOrDefault();
+
+            postActual.id = post.id;
+            postActual.contenido = post.contenido;
+            postActual.fecha = post.fecha;
+            postActual.idUsuario = (int)usuarioActual;
+
+            try
+            {
+                _context.Update(postActual);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!PostExists(post.id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return RedirectToAction("MisPublicaciones", "Home");
+
+        }
+
         /* -----------------------------------------ver comentarios de post especifico--------------------------------------------------*/
         // GET: home/Comentarios/5
         public async Task<IActionResult> Comentarios(int? id)
@@ -188,6 +312,7 @@ namespace RedSocialFinal.Controllers
             return View(await myContext.ToListAsync());         
         }
 
+        /* -----------------------------------------Comentar--------------------------------------------------*/
         // GET: Comentarios/Create
         public IActionResult Comentar(int id)
         {
@@ -284,10 +409,77 @@ namespace RedSocialFinal.Controllers
             }
             return RedirectToAction("MiPerfil", "Home");
 
-            bool UsuarioExists(int id)
+        }
+
+        /* -----------------------------------------Reaccionar--------------------------------------------------*/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Reaccionar(int idPost)
+        {
+            Post post = null;
+            post = _context.posts.Where(u => u.id == idPost).FirstOrDefault();
+
+            int? idUsuario = HttpContext.Session.GetInt32("Id");
+            Usuario usuarioActual = _context.usuarios.Where(p => p.id == idUsuario).FirstOrDefault();
+
+            if (post != null)
             {
-                return (_context.usuarios?.Any(e => e.id == id)).GetValueOrDefault();
+                Reaccion reaccion = post.reacciones.Where(U => U.idUsuario == idUsuario).FirstOrDefault();
+                if (reaccion != null) return RedirectToAction("PostAmigos", "Home"); ;
+
+                try
+                {
+                    Reaccion r = new Reaccion(1, (int)idPost, usuarioActual.id);
+                    post.reacciones.Add(r);
+                    _context.posts.Update(post);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("PostAmigos", "Home");
+                }
+                catch (Exception ex)
+                {
+                    
+                }
             }
+            return RedirectToAction("PostAmigos", "Home");
+
+        }
+        /* -----------------------------------------Eliminar Reacción--------------------------------------------------*/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EliminarReaccion(int idPost)
+        {
+            Post post = null;
+            post = _context.posts.Where(U => U.id == idPost).FirstOrDefault();
+
+            int? idUsuario = HttpContext.Session.GetInt32("Id");
+            Usuario usuarioActual = _context.usuarios.Where(p => p.id == idUsuario).FirstOrDefault();
+
+            if (post == null) return RedirectToAction("PostAmigos", "Home");
+
+            try
+            {
+                Reaccion reaccion = post.reacciones.Where(U => U.idUsuario == usuarioActual.id).FirstOrDefault();
+
+                post.reacciones.Remove(reaccion);
+                usuarioActual.misReacciones.Remove(reaccion);
+                _context.reacciones.Remove(reaccion);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("PostAmigos", "Home");
+            }
+            return RedirectToAction("PostAmigos", "Home");
+
+        }
+        private bool UsuarioExists(int id)
+        {
+            return (_context.usuarios?.Any(e => e.id == id)).GetValueOrDefault();
+        }
+
+        private bool PostExists(int id)
+        {
+            return (_context.posts?.Any(e => e.id == id)).GetValueOrDefault();
         }
     }
 }
