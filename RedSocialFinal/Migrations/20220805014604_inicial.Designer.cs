@@ -12,7 +12,7 @@ using RedSocialFinal.Data;
 namespace RedSocialFinal.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20220803064752_inicial")]
+    [Migration("20220805014604_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,7 +58,7 @@ namespace RedSocialFinal.Migrations
                         {
                             id = 1,
                             contenido = "111",
-                            fecha = new DateTime(2022, 8, 3, 3, 47, 52, 572, DateTimeKind.Local).AddTicks(8525),
+                            fecha = new DateTime(2022, 8, 4, 22, 46, 4, 700, DateTimeKind.Local).AddTicks(6192),
                             idPost = 1,
                             idUsuario = 1
                         },
@@ -66,7 +66,7 @@ namespace RedSocialFinal.Migrations
                         {
                             id = 2,
                             contenido = "222",
-                            fecha = new DateTime(2022, 8, 3, 3, 47, 52, 572, DateTimeKind.Local).AddTicks(8528),
+                            fecha = new DateTime(2022, 8, 4, 22, 46, 4, 700, DateTimeKind.Local).AddTicks(6193),
                             idPost = 1,
                             idUsuario = 5
                         },
@@ -74,7 +74,7 @@ namespace RedSocialFinal.Migrations
                         {
                             id = 3,
                             contenido = "333",
-                            fecha = new DateTime(2022, 8, 3, 3, 47, 52, 572, DateTimeKind.Local).AddTicks(8529),
+                            fecha = new DateTime(2022, 8, 4, 22, 46, 4, 700, DateTimeKind.Local).AddTicks(6194),
                             idPost = 2,
                             idUsuario = 2
                         },
@@ -82,7 +82,7 @@ namespace RedSocialFinal.Migrations
                         {
                             id = 4,
                             contenido = "444",
-                            fecha = new DateTime(2022, 8, 3, 3, 47, 52, 572, DateTimeKind.Local).AddTicks(8529),
+                            fecha = new DateTime(2022, 8, 4, 22, 46, 4, 700, DateTimeKind.Local).AddTicks(6194),
                             idPost = 3,
                             idUsuario = 3
                         },
@@ -90,7 +90,7 @@ namespace RedSocialFinal.Migrations
                         {
                             id = 5,
                             contenido = "555",
-                            fecha = new DateTime(2022, 8, 3, 3, 47, 52, 572, DateTimeKind.Local).AddTicks(8530),
+                            fecha = new DateTime(2022, 8, 4, 22, 46, 4, 700, DateTimeKind.Local).AddTicks(6195),
                             idPost = 4,
                             idUsuario = 4
                         });
@@ -125,35 +125,35 @@ namespace RedSocialFinal.Migrations
                         {
                             id = 1,
                             contenido = "111",
-                            fecha = new DateTime(2022, 8, 3, 3, 47, 52, 572, DateTimeKind.Local).AddTicks(8507),
+                            fecha = new DateTime(2022, 8, 4, 22, 46, 4, 700, DateTimeKind.Local).AddTicks(6175),
                             idUsuario = 1
                         },
                         new
                         {
                             id = 2,
                             contenido = "222",
-                            fecha = new DateTime(2022, 8, 3, 3, 47, 52, 572, DateTimeKind.Local).AddTicks(8515),
+                            fecha = new DateTime(2022, 8, 4, 22, 46, 4, 700, DateTimeKind.Local).AddTicks(6183),
                             idUsuario = 1
                         },
                         new
                         {
                             id = 3,
                             contenido = "333",
-                            fecha = new DateTime(2022, 8, 3, 3, 47, 52, 572, DateTimeKind.Local).AddTicks(8515),
+                            fecha = new DateTime(2022, 8, 4, 22, 46, 4, 700, DateTimeKind.Local).AddTicks(6183),
                             idUsuario = 2
                         },
                         new
                         {
                             id = 4,
                             contenido = "444",
-                            fecha = new DateTime(2022, 8, 3, 3, 47, 52, 572, DateTimeKind.Local).AddTicks(8516),
+                            fecha = new DateTime(2022, 8, 4, 22, 46, 4, 700, DateTimeKind.Local).AddTicks(6184),
                             idUsuario = 3
                         },
                         new
                         {
                             id = 5,
                             contenido = "555",
-                            fecha = new DateTime(2022, 8, 3, 3, 47, 52, 572, DateTimeKind.Local).AddTicks(8516),
+                            fecha = new DateTime(2022, 8, 4, 22, 46, 4, 700, DateTimeKind.Local).AddTicks(6184),
                             idUsuario = 4
                         });
                 });

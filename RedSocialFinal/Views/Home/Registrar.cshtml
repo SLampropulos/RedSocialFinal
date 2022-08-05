@@ -4,48 +4,47 @@
     ViewData["Title"] = "Registrar";
 }
 
-<h1>Create</h1>
+<h1>Registrarse</h1>
 
-<h4>Usuario</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Registrar">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="dni" class="control-label"></label>
+                <label asp-for="dni" class="control-label">Dni</label>
                 <input asp-for="dni" class="form-control" />
                 <span asp-validation-for="dni" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="nombre" class="control-label"></label>
+                <label asp-for="nombre" class="control-label">Nombre</label>
                 <input asp-for="nombre" class="form-control" />
                 <span asp-validation-for="nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="apellido" class="control-label"></label>
+                <label asp-for="apellido" class="control-label">Apellido</label>
                 <input asp-for="apellido" class="form-control" />
                 <span asp-validation-for="apellido" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="mail" class="control-label"></label>
+                <label asp-for="mail" class="control-label">Email</label>
                 <input asp-for="mail" class="form-control" />
                 <span asp-validation-for="mail" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="pass" class="control-label"></label>
+                <label asp-for="pass" class="control-label">Contraseña</label>
                 <input asp-for="pass" class="form-control" />
                 <span asp-validation-for="pass" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <input type="submit" value="Registrarse" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Login">Volver a Login</a>
+<div class="mt-3">
+    <a asp-action="Login" class="btn btn-primary">Volver a Login</a>
 </div>
 
 @section Scripts {

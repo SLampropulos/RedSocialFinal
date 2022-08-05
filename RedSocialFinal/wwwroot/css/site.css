@@ -16,3 +16,21 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.logoLetra {
+    font-family: Roboto;
+    font-size: 2rem;
+}
+.colorLogo {
+    color: #d62222;
+}
+.itemsNav {
+    font-family:Roboto;
+    font-size:1.2rem;
+}
+.colorNav {
+    color: #454343;
+}
+.itemsNav:hover{
+    border-bottom:2px solid black;
+}

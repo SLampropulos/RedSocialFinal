@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lean\\source\\repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj": {}
+    "C:\\Users\\froma\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lean\\source\\repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj": {
+    "C:\\Users\\froma\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lean\\source\\repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
+        "projectUniqueName": "C:\\Users\\froma\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
         "projectName": "RedSocialFinal",
-        "projectPath": "C:\\Users\\Lean\\source\\repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
-        "packagesPath": "C:\\Users\\Lean\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lean\\source\\repos\\RedSocialFinal\\RedSocialFinal\\obj\\",
+        "projectPath": "C:\\Users\\froma\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\RedSocialFinal.csproj",
+        "packagesPath": "C:\\Users\\froma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\froma\\Source\\Repos\\RedSocialFinal\\RedSocialFinal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lean\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\froma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
