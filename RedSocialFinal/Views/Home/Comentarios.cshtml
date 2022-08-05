@@ -6,9 +6,6 @@
 
 <h2>Comentarios</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -43,7 +40,7 @@
                 @Html.DisplayFor(modelItem => item.usuario.id)
             </td>
             <td>  
-                <a asp-action="PostAmigos">Volver a publicaciones</a>
+                <a asp-action="PostAmigos" class="btn btn-outline-primary">Volver a publicaciones</a>
             </td>
         </tr>
 }

@@ -10,9 +10,9 @@
 
 <h1>Posts de Amigos</h1>
 
-<p>
-    <a asp-action="Postear">Crear Post</a>
-</p>
+<div class="col-md-4 align-items-center">
+    <a asp-action="Postear" class="btn btn-primary">Crear Post</a>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -55,15 +55,15 @@
                 }
             </td>
             <td class="d-flex">
-                <a asp-action="Comentar" asp-route-id="@item.id">Comentar</a> |
-                <a asp-action="Comentarios" asp-route-id="@item.id">Comentarios</a> |
+                <a asp-action="Comentar" asp-route-id="@item.id" class="btn btn-info ms-3 me-3">Comentar</a> 
+                <a asp-action="Comentarios" asp-route-id="@item.id" class="btn btn-outline-info ms-3 me-3">Comentarios</a> 
                 <form asp-action="Reaccionar" >
                     <input type="hidden" name="idPost" asp-for="@item.id"/>
-                    <input type="submit" value="Me gusta" class="btn btn-primary" />
-                </form> |
+                    <input type="submit" value="Me gusta" class="btn btn-primary ms-3 me-3" />
+                </form>
                 <form asp-action="EliminarReaccion" >
                     <input type="hidden" name="idPost" asp-for="@item.id"/>
-                    <input type="submit" value="Ya no me gusta" class="btn btn-primary" />
+                    <input type="submit" value="Ya no me gusta" class="btn btn-outline-primary" />
                 </form>
             </td>
         </tr>

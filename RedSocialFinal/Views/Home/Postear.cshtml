@@ -28,14 +28,14 @@
                 <select asp-for="idUsuario" class ="form-control" hidden asp-items="ViewBag.idUsuario"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Postear" class="btn btn-primary" />
+                <input type="submit" value="Postear" class="btn btn-primary mt-3" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="MisPublicaciones">Back to List</a>
+<div class="col-md-4 align-items-center">
+    <a asp-action="MisPublicaciones" class="btn btn-outline-primary mt-3">Volver</a>
 </div>
 
 @section Scripts {

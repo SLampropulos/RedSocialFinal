@@ -8,9 +8,10 @@
 
 <h1>Mis Publicaciones</h1>
 
-<p>
-    <a asp-action="Postear">Crear Post</a>
-</p>
+<div class="col-md-4 align-items-center">
+    <a asp-action="Postear" class="btn btn-primary">Crear Post</a>
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -53,11 +54,11 @@
                 }
             </td>
             <td>
-                <a asp-action="Comentar" asp-route-id="@item.id">Comentar</a> |
-                <a asp-action="Comentarios" asp-route-id="@item.id">Comentarios</a> |
-                <a asp-action="ModificarPost" asp-route-id="@item.id">Modificar</a> |
-                <a asp-action="AgregarTag" asp-route-id="@item.id">Agregar Tag</a> |
-                <a asp-action="EliminarPost" asp-route-id="@item.id">Eliminar</a>
+                <a asp-action="Comentar" asp-route-id="@item.id" class="btn btn-outline-primary ms-2">Comentar</a> 
+                <a asp-action="Comentarios" asp-route-id="@item.id" class="btn btn-outline-primary ms-2">Comentarios</a> 
+                <a asp-action="ModificarPost" asp-route-id="@item.id" class="btn btn-outline-primary ms-2">Modificar</a> 
+                <a asp-action="AgregarTag" asp-route-id="@item.id" class="btn btn-outline-primary ms-2">Agregar Tag</a> 
+                <a asp-action="EliminarPost" asp-route-id="@item.id"class="btn btn-outline-danger ms-2">Eliminar</a>
                 
             </td>
         </tr>
