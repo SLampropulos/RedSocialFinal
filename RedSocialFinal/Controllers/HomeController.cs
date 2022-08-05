@@ -579,6 +579,80 @@ namespace RedSocialFinal.Controllers
                 return View(bPost.ToList());
         }
 
+        /* -----------------------------------------Amigos--------------------------------------------------*/
+        public async Task<IActionResult> Usuarios()
+        {
+
+            return View(await _context.usuarios.ToListAsync());
+        }
+        public async Task<IActionResult> Amigos()
+        {
+            int? idUsuario = HttpContext.Session.GetInt32("Id");
+            Usuario usuarioActual = await _context.usuarios.Where(U => U.id == idUsuario).FirstOrDefaultAsync();
+
+            List<Usuario> usuarios = new List<Usuario>();
+            List<UsuarioAmigo> amigos = usuarioActual.misAmigos.ToList();
+
+            foreach (UsuarioAmigo amigo in amigos)
+            {
+                usuarios.Add(amigo.amigo);
+            }
+            return View(usuarios.ToList());
+        }
+
+        public async Task<IActionResult> AgregarAmigo(int? id)
+        {
+            int? idUsuario = HttpContext.Session.GetInt32("Id");
+            Usuario usuarioActual = await _context.usuarios.Where(U => U.id == idUsuario).FirstOrDefaultAsync();
+
+
+            Usuario usuario = null;
+            usuario = _context.usuarios.Where(U => U.id == id).FirstOrDefault();
+            UsuarioAmigo aux = usuarioActual.misAmigos.Where(U => U.amigo.Equals(usuario)).FirstOrDefault();
+            if (usuario != null && aux == null)
+            {
+                try
+                {
+                    UsuarioAmigo amigo = new UsuarioAmigo(usuarioActual, usuario);
+                    UsuarioAmigo amigo2 = new UsuarioAmigo(usuario, usuarioActual);
+                    usuarioActual.misAmigos.Add(amigo);
+                    usuarioActual.amigosMios.Add(amigo2);
+                    _context.Update(usuarioActual);
+                    _context.SaveChanges();
+                    return RedirectToAction("Usuarios", "Home");
+                }
+                catch (Exception e)
+                {
+                    
+                }
+            }
+            return RedirectToAction("Usuarios", "Home");
+        }
+
+        public async Task<IActionResult> EliminarAmigo(int? id)
+        {
+            int? idUsuario = HttpContext.Session.GetInt32("Id");
+            Usuario usuarioActual = await _context.usuarios.Where(U => U.id == idUsuario).FirstOrDefaultAsync();
+
+
+            Usuario usuario = null;
+            usuario = _context.usuarios.Where(U => U.id == id).FirstOrDefault();
+
+
+            if (usuario != null)
+            {
+                UsuarioAmigo amigo = usuarioActual.misAmigos.Where(U => U.amigo.Equals(usuario)).FirstOrDefault();
+                UsuarioAmigo amigo2 = usuarioActual.amigosMios.Where(U => U.user.Equals(usuario)).FirstOrDefault();
+
+                if (amigo != null)
+                {
+                    usuarioActual.misAmigos.Remove(amigo);
+                    usuarioActual.amigosMios.Remove(amigo2);
+                    _context.SaveChanges();
+                }
+            }
+            return RedirectToAction("Amigos", "Home");
+        }
 
 
         /* -----------------------------------------Metodos auxiliares--------------------------------------------------*/
